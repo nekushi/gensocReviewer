@@ -302,6 +302,7 @@ btnStart.onclick = function() {
 showAns.onclick = function() {
     if (showAns.textContent === "Show Answer!") {
         let ans = input.value.toLowerCase();
+        ans = ans[ans.length - 1] === " " ? ans.split("").pop().join : ans;
         if (ans === "") {
             incorrectScore.textContent = parseInt(incorrectScore.textContent) + 1;
         } else if (ans === questions[rngQuestion].answer.toLowerCase() || questions[rngQuestion].answer.toLowerCase().match(ans)) {
@@ -327,8 +328,8 @@ showAns.onclick = function() {
         divResultArea.style.display = "flex";
         resultCorrectScore.textContent = correctScore.textContent;
         resultIncorrectScore.textContent = incorrectScore.textContent;
-        percentage.textContent = `${(resultCorrectScore.textContent / (parseInt(resultCorrectScore.textContent) + parseInt(resultIncorrectScore.textContent))) * 100}%`;
-        remarks.textContent = parseInt(percentage.textContent) >= 80 ? "80%+, nice." : "review lang GLGLGL!";
+        percentage.textContent = `${Math.round((resultCorrectScore.textContent / (parseInt(resultCorrectScore.textContent) + parseInt(resultIncorrectScore.textContent))) * 100)}%`;
+        remarks.textContent = parseInt(percentage.textContent) >= 80 ? "80% or above, nice." : "review lang GLGLGL!";
     }
 
     if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 65) {
