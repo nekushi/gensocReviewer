@@ -1,3 +1,5 @@
+alert("This will only work on mobile, thanks");
+
 const divFirstPage = document.querySelector(".first-page")
 const divSecondPage = document.querySelector(".second-page")
 const divQuizArea = document.querySelector(".quiz-area")

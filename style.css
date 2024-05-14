@@ -9,13 +9,10 @@
 }
 body {
     background-color: #131212;
-    height: 97vh;
+    height: 100dvh;
     margin: 0;
     padding: 0;
 }
-
-
-@media only screen and (max-width: 600px) {
 .first-page {
     position: relative;
     height: 100%;
@@ -37,7 +34,6 @@ body {
 .description {
     font-size: 1rem;
     font-weight: 400;
-
 }
 i {
     color: #ffffff;
@@ -47,7 +43,7 @@ i {
 button {
     font-weight: 700;
     position: absolute;
-    width: 85%;
+    width: calc(100% - 72px);
     bottom: 36px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -61,7 +57,6 @@ button {
 button:active {
     background-color: #600d87;
 }
-
 .second-page {
     position: relative;
     padding-top: 6rem;
@@ -75,9 +70,6 @@ button:active {
 ul > li {
     margin-bottom: 1rem;
 }
-
-
-
 .quiz-area {
     display: none;
     color: #ffffff;
@@ -100,8 +92,10 @@ h1 + p {
     font-size: 16px;
 }
 .answer {
+    width: 50%;
     position: relative;
-    margin-inline: 4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
     bottom: 0;
 }
 label {
@@ -111,7 +105,8 @@ input {
     background: transparent;
     color: #ffffff;
     border: none;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    width: 100%;
 }
 .quiz-area > p {
     position: relative;
@@ -119,4 +114,20 @@ input {
     transform: translate(-50%, 0);
     width: max-content;
 }
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        height: 97vh;
+    }
+    button {
+        width: 85%;
+        bottom: 18px;
+        height: 3rem;
+    }
+    .answer {
+        display: flex;
+        flex-flow: column nowrap;
+    }
 }
+
