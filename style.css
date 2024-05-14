@@ -107,6 +107,7 @@ input {
     border: none;
     border-bottom: 2px solid #ffffff;
     width: 100%;
+    outline: none;
 }
 .quiz-area > p {
     position: relative;
