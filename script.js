@@ -66,7 +66,7 @@ const questions = [
     }, 
     {
         question: "a condition of having both male and female reproductive organs.",
-        answer: "Hermaphroditism",
+        answer: "Hermaphroditism or Intersex",
     }, 
     {
         question: "a steroid hormone that stimulates development of male secondary sexual characteristics.",
@@ -82,7 +82,7 @@ const questions = [
     }, 
     {
         question: "it causes a person to police himself according to society’s standards and norms.",
-        answer: "Internalized social-control",
+        answer: "Internalized social control",
     }, 
     {
         question: "Heterosexuality, homosexuality, and bisexuality are examples of?",
@@ -90,7 +90,7 @@ const questions = [
     }, 
     {
         question: "someone who is born genetically male and female is said to be?",
-        answer: "Hermaphrodite or Intersexuality",
+        answer: "Hermaphrodite or Intersexuality or Intersex",
     }, 
     {
         question: "it refers to a person’s internal sense of being male, female, or something else.",
@@ -190,7 +190,7 @@ const questions = [
     }, 
     {
         question: "it is often assessed using indicators that measure aspects of education, physical and built environment, community, and economy.",
-        answer: "Objective well-being or Objective",
+        answer: "Objective well being or Objective",
     }, 
     {
         question: "it refers to language that avoids gender stereotyping.",
@@ -198,7 +198,7 @@ const questions = [
     }, 
     {
         question: "it pertains to people’s actions.",
-        answer: "Behavior",
+        answer: "Behavior or Behavior domain",
     }, 
     {
         question: "it is the process of internalizing the norms and ideologies of society.",
@@ -214,9 +214,8 @@ const questions = [
     }, 
     {
         question: "it refers to people’s thought processes such as memory, perception, and information-processing.",
-        answer: "Cognitive",
+        answer: "Cognitive or Cognitive domain",
     }, 
-    
     {
         question: "it is discrimination, prejudice, or stereotyping based on gender, and is most often expressed toward women and girls.",
         answer: "Sexism",
@@ -227,7 +226,7 @@ const questions = [
     }, 
     {
         question: "it refers to how people experience and evaluate their lives and specific domains and activities in their lives.",
-        answer: "Subjective well-being or Subjective",
+        answer: "Subjective well being or Subjective",
     }, 
     {
         question: "our ______ and gender-related behaviors are originated from what we SENSE, THINK, and FEEL.",
@@ -275,7 +274,7 @@ const questions = [
     }, 
     {
         question: "it pertains to people’s emotions and feelings.",
-        answer: "Affective",
+        answer: "Affective or Affective domain",
     }, 
     {
         question: "it articulates consciousness, reflects culture, and affects socialization.",
