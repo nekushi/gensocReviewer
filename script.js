@@ -1,18 +1,26 @@
 const divFirstPage = document.querySelector(".first-page")
 const divSecondPage = document.querySelector(".second-page")
 const divQuizArea = document.querySelector(".quiz-area")
+const divResultArea = document.querySelector(".result-area")
 
 const questionArea = document.querySelector("h1 + p")
 const label = document.querySelector("label")
 const input = document.querySelector("input")
-const showAns = document.querySelector(".show-answer")
 const span = document.querySelector(".p-correct-answer")
+// const scoreboard = document.querySelector('.new-scoreboard')
 
 const btnGetStarted = document.querySelector(".get-started")
 const btnStart = document.querySelector(".start")
+const showAns = document.querySelector(".show-answer")
+const restart = document.querySelector(".restart")
 
 const correctScore = document.querySelector(".correct > span")
 const incorrectScore = document.querySelector(".incorrect > span")
+const percentage = document.querySelector(".percentage > span")
+const remarks = document.querySelector(".remarks > span")
+
+const resultCorrectScore = document.querySelector(".result-correct > span")
+const resultIncorrectScore = document.querySelector(".result-incorrect > span")
 
 
 const questions = [
@@ -315,5 +323,20 @@ showAns.onclick = function() {
         rngQuestion = Math.floor(Math.random() * questions.length);
         questionArea.textContent = `${questions[rngQuestion].question}`;
         showAns.textContent = "Show Answer!";
+    } else if (showAns.textContent === "Show Result!") {
+        divQuizArea.style.display = "none";
+        divResultArea.style.display = "flex";
+        resultCorrectScore.textContent = correctScore.textContent;
+        resultIncorrectScore.textContent = incorrectScore.textContent;
+        percentage.textContent = `${(resultCorrectScore.textContent / (parseInt(resultCorrectScore.textContent) + parseInt(resultIncorrectScore.textContent))) * 100}%`;
+        remarks.textContent = parseInt(percentage.textContent) >= 80 ? "80%+, nice." : "review lang GLGLGL!";
     }
+
+    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 5) {
+        showAns.textContent = "Show Result!";
+    }
+}
+
+restart.onclick = function() {
+    location.reload();
 }

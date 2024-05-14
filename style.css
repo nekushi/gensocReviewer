@@ -123,13 +123,27 @@ input {
 .fixed-scoreboard > p {
     font-weight: 700;
 }
-.correct > span {
+.correct > span, .result-correct > span {
     color: #66ff66;
 }
-.incorrect > span {
+.incorrect > span, .result-incorrect > span {
     color: #ff0000;
 }
-
+.result-area {
+    color: #ffffff;
+    position: relative;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.new-scoreboard > p {
+    font-size: 3rem;
+    text-align: center;
+}
+.new-scoreboard > h3 {
+    text-align: center;
+}
 
 @media only screen and (max-width: 600px) {
     body {
@@ -143,6 +157,9 @@ input {
     .answer {
         display: flex;
         flex-flow: column nowrap;
+    }
+    .new-scoreboard > p {
+        font-size: 2rem;
     }
 }
 
