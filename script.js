@@ -332,7 +332,7 @@ showAns.onclick = function() {
         remarks.textContent = parseInt(percentage.textContent) >= 80 ? "80%+, nice." : "review lang GLGLGL!";
     }
 
-    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 5) {
+    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 65) {
         showAns.textContent = "Show Result!";
     }
 }
