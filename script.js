@@ -333,8 +333,7 @@ btnStart.onclick = function() {
 
 showAns.onclick = function() {
     if (showAns.textContent === "Show Answer!") {
-        let ans = input.value.toLowerCase();
-        ans = ans[ans.length - 1] === " " ? ans.split("").pop().join : ans;
+        let ans = input.value.toLowerCase().trim();
         if (ans === "") {
             incorrectScore.textContent = parseInt(incorrectScore.textContent) + 1;
         } else if (ans === questions[rngQuestion].answer.toLowerCase() || questions[rngQuestion].answer.toLowerCase().match(ans)) {
