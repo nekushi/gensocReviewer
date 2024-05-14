@@ -138,7 +138,7 @@ const questions = [
     }, 
     {
         question: "it encompass the roles that men and women are assigned to base on their sex and what behaviors they must possess to fulfill these roles.",
-        answer: "Sex-role stereotypes",
+        answer: "Sex role stereotypes",
     }, 
     {
         question: "it is the way in which a person expresses a gender identity, typically through their appearance, dress, and behavior.",
@@ -246,11 +246,11 @@ const questions = [
     }, 
     {
         question: "it is self-focused attention and knowledge.",
-        answer: "Self-awareness or Self awareness",
+        answer: "Self awareness",
     }, 
     {
         question: "the ultimate goal of understanding psychological aspects of our experiences.",
-        answer: "Well being or Well-being",
+        answer: "Well being",
     }, 
     {
         question: "it is the use of language which devalues members of one sex, almost invariably women, thus fosters gender inequality.",
