@@ -284,6 +284,38 @@ const questions = [
         question: "the ______ perspective focuses on exploring and understanding human sexuality in the lens of psychological and social process.",
         answer: "Psychosocial",
     }, 
+    {
+        question: "include serious,immediate,and long -term impacts on the sexual ,physical,and psychological health of survivors.",
+        answer: "Consequences of gender based violence",
+    },
+    {
+        question: "refers to any harm perpetrated against a persons will on the basis of gender , the socially ascribed differences between males and females.One Of the most widespread and human rights abuses , but least recognized in the world.Results in physical , sexual, psychological harm to both men and women.",
+        answer: "Gender based violence",
+    },
+    {
+        question: "referring to someone who has recently been affected by sexual violence;when discussing a particular crime; or when referring to aspects of the criminal Justine system.",
+        answer: "Victim",
+    },
+    {
+        question: "defined as any act of gender-based violence that results in,or is likely to result in physical,sexual or mental harm or suffering to women and girls including threats of such acts, coercion,  or arbirtrary deprivation of liberty , whether occurring  in public or in private life.",
+        answer: "Gender based violence experienced by women and girls",
+    },
+    {
+        question: "a persons , group,or institutions that inflicts , supports, or condones violence or other abuse against a person or group of persons.",
+        answer: "Perpetrators",
+    },
+    {
+        question: "the preferred term {not a victim}of a person who has lived through an incident of gen der based violence.",
+        answer: "Survivor",
+    },
+    {
+        question: "it frames the states directions toward realizing gender equality and the importance of a gendered perspective in looking into broad social issues such as poverty,access to education,livelihood and employment.",
+        answer: "Magna carta of women or R.A. 9710",
+    },
+    {
+        question: "government agencies required to review their regulations, circular, isuarances, and procedures and remove gender biased provision against women within thein agency and in the planning and implementation  of their projects.",
+        answer: "Women in nation building act of 1992",
+    },
 ]
 
 let rngQuestion;
@@ -332,7 +364,7 @@ showAns.onclick = function() {
         remarks.textContent = parseInt(percentage.textContent) >= 80 ? "80% or above, nice." : "review lang GLGLGL!";
     }
 
-    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 65) {
+    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 73) {
         showAns.textContent = "Show Result!";
     }
 }

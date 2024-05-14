@@ -157,6 +157,7 @@ input {
     .answer {
         display: flex;
         flex-flow: column nowrap;
+        gap: 10px;
     }
     .new-scoreboard > p {
         font-size: 2rem;
