@@ -1,5 +1,3 @@
-alert("This will only work on mobile, thanks");
-
 const divFirstPage = document.querySelector(".first-page")
 const divSecondPage = document.querySelector(".second-page")
 const divQuizArea = document.querySelector(".quiz-area")
@@ -8,10 +6,14 @@ const questionArea = document.querySelector("h1 + p")
 const label = document.querySelector("label")
 const input = document.querySelector("input")
 const showAns = document.querySelector(".show-answer")
-const span = document.querySelector("span")
+const span = document.querySelector(".p-correct-answer")
 
 const btnGetStarted = document.querySelector(".get-started")
 const btnStart = document.querySelector(".start")
+
+const correctScore = document.querySelector(".correct > span")
+const incorrectScore = document.querySelector(".incorrect > span")
+
 
 const questions = [
     {
@@ -293,16 +295,19 @@ btnStart.onclick = function() {
 showAns.onclick = function() {
     if (showAns.textContent === "Show Answer!") {
         let ans = input.value.toLowerCase();
-        if (ans === questions[rngQuestion].answer.toLowerCase() || questions[rngQuestion].answer.toLowerCase().match(ans)) {
+        if (ans === "") {
+            incorrectScore.textContent = parseInt(incorrectScore.textContent) + 1;
+        } else if (ans === questions[rngQuestion].answer.toLowerCase() || questions[rngQuestion].answer.toLowerCase().match(ans)) {
             input.style.color = "#66ff66";
-        } else {
+            correctScore.textContent = parseInt(correctScore.textContent) + 1;
+        } else if (ans !== questions[rngQuestion].answer.toLowerCase()) {
             input.style.color = "#ff0000";
+            incorrectScore.textContent = parseInt(incorrectScore.textContent) + 1;
         }
         span.textContent = questions[rngQuestion].answer;
         showAns.textContent = "Next!";
 
         questions.splice(rngQuestion, 1);
-        // console.log(questions.length);
     } else if (showAns.textContent === "Next!") {
         input.style.color = "#ffffff";
         input.value = "";

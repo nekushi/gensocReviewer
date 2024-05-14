@@ -114,6 +114,20 @@ input {
     transform: translate(-50%, 0);
     width: max-content;
 }
+.fixed-scoreboard {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+}
+.fixed-scoreboard > p {
+    font-weight: 700;
+}
+.correct > span {
+    color: #66ff66;
+}
+.incorrect > span {
+    color: #ff0000;
+}
 
 
 @media only screen and (max-width: 600px) {
