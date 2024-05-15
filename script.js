@@ -238,7 +238,7 @@ const questions = [
     }, 
     {
         question: "it is a tool that reinforce unequal gender relations ",
-        answer: "Sexist in language",
+        answer: "Sexist language",
     }, 
     {
         question: "a field of science which concerns itself with how people think and feel and how thoughts and feelings interact and lead to behavior.",
