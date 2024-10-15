@@ -48,14 +48,14 @@ button {
     left: 50%;
     transform: translate(-50%, 0);
     height: 3rem;
-    background-color: #a310e8;
+    background-color: #d98026;
     border-radius: 12px;
     color: #ffffff;
     border: none;
-    box-shadow: inset 0 0 10px #600d87;
+    box-shadow: inset 0 0 10px #e96816;
 }
 button:active {
-    background-color: #600d87;
+    background-color: #e96816;
 }
 .second-page {
     position: relative;
