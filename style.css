@@ -109,6 +109,11 @@ input {
     width: 100%;
     outline: none;
 }
+.correct-answer {
+    /* border: 1px solid red; */
+    display: inline-block;
+    max-width: 72%;
+}
 .quiz-area > p {
     position: relative;
     left: 50%;

@@ -77,6 +77,10 @@ const questions = [
         answer: "Derivation",
     }, 
     {
+        question: "hierarchical representation of derivation",
+        answer: "Parse Tree",
+    },
+    {
         question: "in square brackets []",
         answer: "Optional parts",
     }, 
@@ -153,7 +157,7 @@ const questions = [
         answer: "Aliases",
     }, 
     {
-        question: "ssumption during optimization",
+        question: "assumption during optimization",
         answer: "Aliasing",
     }, 
     {
@@ -281,7 +285,7 @@ const questions = [
         answer: "StaticSemanticsSpecification CompilerDesign",
     }, 
     {
-        question: "Possible Binding Time",
+        question: "Possible Binding Time (5)",
         answer: "LanguageDesignTime LanguageImplementationTime CompileTime LoadTime Runtime",
     }, 
     {
@@ -309,50 +313,83 @@ const questions = [
 let rngQuestion;
 const rngQuestionLength = questions.length;
 
-btnGetStarted.onclick = function() {
-    divFirstPage.style.display = "none";
-    divSecondPage.style.display = "block";
+function showAndHideDivs(showDiv, hideDiv, type) {
+    showDiv.style.display = type
+    hideDiv.style.display = "none"
 }
-btnStart.onclick = function() {
-    divSecondPage.style.display = "none";
-    divQuizArea.style.display = "flex";
+
+function generateQuestion() {
     rngQuestion = Math.floor(Math.random() * questions.length);
     questionArea.textContent = `${questions[rngQuestion].question}`;
+}
+
+btnGetStarted.onclick = function() {
+    showAndHideDivs(divSecondPage, divFirstPage, "block")
+}
+btnStart.onclick = function() {
+    showAndHideDivs(divQuizArea, divSecondPage, "flex")
+    generateQuestion()
+}
+
+function showAnsNoQuestion() {
+
+}
+
+let corrects = 0
+let incorrects = 0
+
+function incrementCorrect() {
+    correctScore.textContent = ++corrects;
+    resultCorrectScore.textContent = corrects
+}
+
+function incrementIncorrect() {
+    incorrectScore.textContent = ++incorrects;
+    resultIncorrectScore.textContent = incorrects
+}
+
+function displayAnswer() {
+    span.textContent = questions[rngQuestion].answer
+}
+
+function resetInput() {
+    input.style.color = "#ffffff";
+    input.value = "";
+    span.textContent = "";
+}
+
+function calculateAndDisplayResult(right, wrong) {
+    percentage.textContent = `${Math.round((right / (right + wrong)) * 100)}%`;
+    remarks.textContent = percentage.textContent >= 80 ? "80% or above, nice." : "review lang GLGLGL!";
 }
 
 showAns.onclick = function() {
     if (showAns.textContent === "Show Answer!") {
         let ans = input.value.toLowerCase().trim();
         if (ans === "") {
-            incorrectScore.textContent = parseInt(incorrectScore.textContent) + 1;
+            incrementIncorrect()
         } else if (ans === questions[rngQuestion].answer.toLowerCase() || questions[rngQuestion].answer.toLowerCase().match(ans)) {
             input.style.color = "#66ff66";
-            correctScore.textContent = parseInt(correctScore.textContent) + 1;
+            incrementCorrect()
         } else if (ans !== questions[rngQuestion].answer.toLowerCase()) {
             input.style.color = "#ff0000";
-            incorrectScore.textContent = parseInt(incorrectScore.textContent) + 1;
+            incrementIncorrect()
         }
-        span.textContent = questions[rngQuestion].answer;
+        displayAnswer()
         showAns.textContent = "Next!";
 
         questions.splice(rngQuestion, 1);
     } else if (showAns.textContent === "Next!") {
-        input.style.color = "#ffffff";
-        input.value = "";
-        span.textContent = "";
-        rngQuestion = Math.floor(Math.random() * questions.length);
-        questionArea.textContent = `${questions[rngQuestion].question}`;
+        resetInput()
+        generateQuestion()
+
         showAns.textContent = "Show Answer!";
     } else if (showAns.textContent === "Show Result!") {
-        divQuizArea.style.display = "none";
-        divResultArea.style.display = "flex";
-        resultCorrectScore.textContent = correctScore.textContent;
-        resultIncorrectScore.textContent = incorrectScore.textContent;
-        percentage.textContent = `${Math.round((resultCorrectScore.textContent / (parseInt(resultCorrectScore.textContent) + parseInt(resultIncorrectScore.textContent))) * 100)}%`;
-        remarks.textContent = parseInt(percentage.textContent) >= 80 ? "80% or above, nice." : "review lang GLGLGL!";
+        showAndHideDivs(divResultArea, divQuizArea, "flex")
+        calculateAndDisplayResult(corrects, incorrects)
     }
 
-    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === rngQuestionLength) {
+    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 10) {
         showAns.textContent = "Show Result!";
     }
 }
