@@ -310,6 +310,8 @@ const questions = [
     },
 ]
 
+let corrects = 0
+let incorrects = 0
 let rngQuestion;
 const rngQuestionLength = questions.length;
 
@@ -322,21 +324,6 @@ function generateQuestion() {
     rngQuestion = Math.floor(Math.random() * questions.length);
     questionArea.textContent = `${questions[rngQuestion].question}`;
 }
-
-btnGetStarted.onclick = function() {
-    showAndHideDivs(divSecondPage, divFirstPage, "block")
-}
-btnStart.onclick = function() {
-    showAndHideDivs(divQuizArea, divSecondPage, "flex")
-    generateQuestion()
-}
-
-function showAnsNoQuestion() {
-
-}
-
-let corrects = 0
-let incorrects = 0
 
 function incrementCorrect() {
     correctScore.textContent = ++corrects;
@@ -361,6 +348,15 @@ function resetInput() {
 function calculateAndDisplayResult(right, wrong) {
     percentage.textContent = `${Math.round((right / (right + wrong)) * 100)}%`;
     remarks.textContent = percentage.textContent >= 80 ? "80% or above, nice." : "review lang GLGLGL!";
+}
+
+btnGetStarted.onclick = function() {
+    showAndHideDivs(divSecondPage, divFirstPage, "block")
+}
+
+btnStart.onclick = function() {
+    showAndHideDivs(divQuizArea, divSecondPage, "flex")
+    generateQuestion()
 }
 
 showAns.onclick = function() {
