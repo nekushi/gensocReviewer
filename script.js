@@ -385,7 +385,7 @@ showAns.onclick = function() {
         calculateAndDisplayResult(corrects, incorrects)
     }
 
-    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === 10) {
+    if (parseInt(correctScore.textContent) + parseInt(incorrectScore.textContent) === rngQuestionLength) {
         showAns.textContent = "Show Result!";
     }
 }
